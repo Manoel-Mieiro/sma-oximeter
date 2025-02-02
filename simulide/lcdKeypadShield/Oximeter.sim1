@@ -16,7 +16,7 @@
 
 <item itemtype="Resistor" CircId="Resistor-73" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-488,132" rotation="-90" hflip="1" vflip="1" label="Resistor-73" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="100 Ω" />
 
-<item itemtype="SerialPort" CircId="SerialPort-88" mainComp="false" Show_id="false" Show_Val="false" Pos="-308,376" rotation="0" hflip="1" vflip="1" label="SerialPort-88" idLabPos="-20,-32" labelrot="0" valLabPos="-16,20" valLabRot="0" Port="/dev/ttyExogenous2" Baudrate="9600 _Bauds" DataBits="8 _Bits" StopBits="1 _Bits" />
+<item itemtype="SerialPort" CircId="SerialPort-88" mainComp="false" Show_id="false" Show_Val="false" Pos="-308,376" rotation="0" hflip="1" vflip="1" label="SerialPort-88" idLabPos="-20,-32" labelrot="0" valLabPos="-16,20" valLabRot="0" Port="/dev/ttyExogenous0" Baudrate="9600 _Bauds" DataBits="8 _Bits" StopBits="1 _Bits" />
 
 <item itemtype="Subcircuit" CircId="LcdShield-116" mainComp="false" Show_id="true" Show_Val="false" Pos="12,0" rotation="0" hflip="1" vflip="1" label="LcdShield-116" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Logic_Symbol="false" BoardId="Uno-1" />
 
