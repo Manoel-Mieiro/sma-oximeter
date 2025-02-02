@@ -16,7 +16,7 @@
 
 <item itemtype="Resistor" CircId="Resistor-73" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-488,132" rotation="-90" hflip="1" vflip="1" label="Resistor-73" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="100 Ω" />
 
-<item itemtype="SerialPort" CircId="SerialPort-88" mainComp="false" Show_id="false" Show_Val="false" Pos="-308,376" rotation="0" hflip="1" vflip="1" label="SerialPort-88" idLabPos="-20,-32" labelrot="0" valLabPos="-16,20" valLabRot="0" Port="/dev/ttyExogenous0" Baudrate="9600 _Bauds" DataBits="8 _Bits" StopBits="1 _Bits" />
+<item itemtype="SerialPort" CircId="SerialPort-88" mainComp="false" Show_id="false" Show_Val="false" Pos="-308,376" rotation="0" hflip="1" vflip="1" label="SerialPort-88" idLabPos="-20,-32" labelrot="0" valLabPos="-16,20" valLabRot="0" Port="/dev/ttyExogenous2" Baudrate="9600 _Bauds" DataBits="8 _Bits" StopBits="1 _Bits" />
 
 <item itemtype="Subcircuit" CircId="LcdShield-116" mainComp="false" Show_id="true" Show_Val="false" Pos="12,0" rotation="0" hflip="1" vflip="1" label="LcdShield-116" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Logic_Symbol="false" BoardId="Uno-1" />
 
@@ -24,26 +24,44 @@
 
 <item itemtype="Node" CircId="Node-104" mainComp="false" Pos="-364,368" />
 
+<item itemtype="Node" CircId="Node-127" mainComp="false" Pos="-540,44" />
+
+<item itemtype="Node" CircId="Node-141" mainComp="false" Pos="-584,44" />
+
+<item itemtype="Node" CircId="Node-157" mainComp="false" Pos="-508,208" />
+
 <item itemtype="Connector" uid="connector-105" startpinid="Led-12-lPin" endpinid="Resistor-18-rPin" pointList="-540,96,-540,120" />
 
 <item itemtype="Connector" uid="connector-106" startpinid="Resistor-17-rPin" endpinid="Led-14-lPin" pointList="-584,120,-584,96" />
 
-<item itemtype="Connector" uid="connector-107" startpinid="Uno-1-7" endpinid="Resistor-73-lPin" pointList="-492,208,-492,148,-488,148" />
-
 <item itemtype="Connector" uid="connector-108" startpinid="Led-11-lPin" endpinid="Resistor-73-rPin" pointList="-488,96,-488,116" />
 
-<item itemtype="Connector" uid="connector-109" startpinid="Resistor-18-lPin" endpinid="Uno-1-8" pointList="-540,152,-540,208,-508,208" />
+<item itemtype="Connector" uid="connector-110" startpinid="Uno-1-RST" endpinid="SerialPort-88-pin1" pointList="-532,352,-532,384,-348,384" />
 
-<item itemtype="Connector" uid="connector-110" startpinid="Resistor-17-lPin" endpinid="Uno-1-9" pointList="-584,152,-584,208,-516,208" />
+<item itemtype="Connector" uid="connector-111" startpinid="Uno-1-3V3" endpinid="Node-101-0" pointList="-524,352,-524,368,-388,368" />
 
-<item itemtype="Connector" uid="connector-111" startpinid="Uno-1-RST" endpinid="SerialPort-88-pin1" pointList="-532,352,-532,384,-348,384" />
+<item itemtype="Connector" uid="connector-112" startpinid="Node-101-2" endpinid="Node-104-0" pointList="-388,368,-364,368" />
 
-<item itemtype="Connector" uid="connector-112" startpinid="Uno-1-3V3" endpinid="Node-101-0" pointList="-524,352,-524,368,-388,368" />
+<item itemtype="Connector" uid="connector-113" startpinid="Node-104-2" endpinid="SerialPort-88-pin0" pointList="-364,368,-348,368" />
 
-<item itemtype="Connector" uid="connector-113" startpinid="Node-101-2" endpinid="Node-104-0" pointList="-388,368,-364,368" />
+<item itemtype="Connector" uid="connector-114" startpinid="Node-101-1" endpinid="Node-104-1" pointList="-388,368,-364,368" />
 
-<item itemtype="Connector" uid="connector-114" startpinid="Node-104-2" endpinid="SerialPort-88-pin0" pointList="-364,368,-348,368" />
+<item itemtype="Connector" uid="Connector-126" startpinid="Led-12-rPin" endpinid="Node-127-1" pointList="-540,64,-540,44" />
 
-<item itemtype="Connector" uid="connector-115" startpinid="Node-101-1" endpinid="Node-104-1" pointList="-388,368,-364,368" />
+<item itemtype="Connector" uid="Connector-128" startpinid="Node-127-2" endpinid="Led-11-rPin" pointList="-540,44,-488,44,-488,64" />
+
+<item itemtype="Connector" uid="Connector-122" startpinid="Uno-1-GND2" endpinid="Node-141-0" pointList="-556,208,-556,184,-620,184,-620,44,-584,44" />
+
+<item itemtype="Connector" uid="Connector-140" startpinid="Led-14-rPin" endpinid="Node-141-1" pointList="-584,64,-584,44" />
+
+<item itemtype="Connector" uid="Connector-142" startpinid="Node-141-2" endpinid="Node-127-0" pointList="-584,44,-540,44" />
+
+<item itemtype="Connector" uid="Connector-143" startpinid="Resistor-73-lPin" endpinid="Uno-1-7" pointList="-488,148,-488,208,-492,208" />
+
+<item itemtype="Connector" uid="Connector-144" startpinid="Resistor-18-lPin" endpinid="Node-157-0" pointList="-540,152,-540,184,-508,184,-508,208" />
+
+<item itemtype="Connector" uid="Connector-158" startpinid="Node-157-2" endpinid="Node-157-1" pointList="-508,208,-508,208" />
+
+<item itemtype="Connector" uid="Connector-162" startpinid="Resistor-17-lPin" endpinid="Uno-1-9" pointList="-584,152,-584,184,-516,184,-516,208" />
 
 </circuit>
