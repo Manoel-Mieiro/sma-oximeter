@@ -1,0 +1,9 @@
+MAS oximeter {
+	infrastructure: Centralised
+	agents:
+		monitor agentArchClass jason.Argo;
+		processador;
+		mensageiro;
+	aslSourcePath:
+		"asl";
+}
