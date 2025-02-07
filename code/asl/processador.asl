@@ -8,7 +8,7 @@
 +!kqml_received(Sender, tell, S, MsgId) <- 
                                 .print("Taxa SPo2 recebida de ", Sender, ": ", S, "%");
                                 /* Belief Update */
-    				-spo2(processador, _);   
+    				            -spo2(processador, _);   
                                 +spo2(processador, S);   
 				.wait(4000);
 				!saturationAssess;
@@ -28,19 +28,19 @@ Abaixo de 90%: Indicativo de emergencia medica
 /*  Classificando o SPO2  */
 
 +!saturationAssess 
-    : spo2(processador, S) & S >= 97  <- 
+    : spo2(processador, S) & S >= 96  <- 
     .print("SpO2: ", S, "%. Status: NORMAL - Bom nivel de oxigenio no sangue.");
     -statusSaturation(_);
     +statusSaturation("NORMAL").
 
 +!saturationAssess
-    : spo2(processador, S) & S >= 92 & S < 97 <- 
+    : spo2(processador, S) & S >= 90 & S < 96 <- 
     .print("SpO2: ", S, "%. Status: ALERTA - Nivel medio de oxigenio no sangue.");
     -statusSaturation(_);
     +statusSaturation("ALERTA").
     
 +!saturationAssess 
-    : spo2(processador, S) & S < 92 <- 
+    : spo2(processador, S) & S < 90 <- 
     .print("SpO2: ", S, "%. Status: CRITICO - Emergencia medica!");
     -statusSaturation(_);
     +statusSaturation("CRITICO").
