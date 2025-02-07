@@ -21,7 +21,6 @@ unsigned long lastClick = millis();
 String strBtnPressed = "";
 String lastLCDMsg = "";
 int option = 0;
-int heartbeatRate=85;
 int spo2=98;
 
 void serialEvent(){
@@ -62,7 +61,6 @@ void information(String info){
 void getExogenousPerceptions(){
     javino.addPercept("device(arduinoWithLCDKeypadShield)");
     javino.addPercept("spo2Rate("+String(spo2)+")");
-    javino.addPercept("heartbeatRate("+String(heartbeatRate)+")");
     javino.sendPercepts();
 }
 
@@ -94,20 +92,21 @@ void printScreen(){
     writeInLCD("Oximeter");
     writeInLCD(" ");
     option=0;
-  }else if(option==1){
-    if(strBtnPressed=="right") heartbeatRate++;
-    if(strBtnPressed=="left")  heartbeatRate--;
-    writeInLCD("BPM...");
-    writeInLCD(String(heartbeatRate)+"bpm");       
-  }else if(option==2){
-    writeInLCD("Saturation Rate");
-    writeInLCD(String(spo2)+"%");      
-    if(spo2 >= 0 && spo2 < 100){
-        if(strBtnPressed=="right") spo2++;
-        if(strBtnPressed=="left")  spo2--;
+  } else if(option==1){
+    static int lastSpo2 = -1;  // último valor exibido de spo2
+
+    if(strBtnPressed=="right" && spo2 < 99) spo2++;
+    if(strBtnPressed=="left" && spo2 > 0) spo2--;
+
+    if(spo2 != lastSpo2) {  
+      lcd.clear();
+      writeInLCD("Saturation Rate");
+      writeInLCD(String(spo2) + "%");
+      lastSpo2 = spo2;  // Atualiza o último valor
     }
   }
 }
+
 
 
 String getBtnPressed(){
