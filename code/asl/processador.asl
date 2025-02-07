@@ -34,28 +34,13 @@ Abaixo de 90%: Indicativo de emergencia medica
     +statusSaturation("NORMAL").
 
 +!saturationAssess
-    : spo2(processador, S) & S >= 94 & S < 97 <- 
+    : spo2(processador, S) & S >= 92 & S < 97 <- 
     .print("SpO2: ", S, "%. Status: ALERTA - Nivel medio de oxigenio no sangue.");
     -statusSaturation(_);
     +statusSaturation("ALERTA").
     
-
-+!saturationAssess
-    : spo2(processador, S) & S >= 90 & S < 94 <- 
-    .print("SpO2: ", S, "%. Status: ALERTA - Baixo nivel de oxigenio no sangue.");
-    -statusSaturation(_);
-    +statusSaturation("ALERTA").
-    
-
-+!saturationAssess
-    : spo2(processador, S) & S >= 90 & S < 92 <- 
-    .print("SpO2: ", S, "%. Status: CRITICO - Insuficiencia respiratoria grave.");
-    -statusSaturation(_);
-    +statusSaturation("CRITICO").
-    
-
 +!saturationAssess 
-    : spo2(processador, S) & S < 90 <- 
+    : spo2(processador, S) & S < 92 <- 
     .print("SpO2: ", S, "%. Status: CRITICO - Emergencia medica!");
     -statusSaturation(_);
     +statusSaturation("CRITICO").
